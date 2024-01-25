@@ -1,0 +1,4 @@
+DocType: Facility,Facility,Anlage
+DocType: Facility,Area (m2),Fläche (m2)
+DocType: Facility,Volume (m3),Volumen (m3)
+DocType: Facility,Address and Contact,Adresse und Kontakt
