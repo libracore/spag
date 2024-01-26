@@ -79,13 +79,11 @@ app_license = "AGPL"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Facility": {
+		"validate": "psag.psag.utils.fetch_inspection"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

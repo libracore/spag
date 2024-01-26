@@ -2,3 +2,9 @@ DocType: Facility,Facility,Anlage
 DocType: Facility,Area (m2),Fläche (m2)
 DocType: Facility,Volume (m3),Volumen (m3)
 DocType: Facility,Address and Contact,Adresse und Kontakt
+DocType: Inspection,Inspection,Besuch
+DocType: Inspection,Facility,Anlage
+DocType: Inspection,Area (m2),Fläche (m2)
+DocType: Inspection,Volume (m3),Volumen (m3)
+DocType: Inspection,Existing device,Bestehendes Gerät
+DocType: Inspection,Existing device type,Bestehendes Gerät Typ
