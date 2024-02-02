@@ -1,0 +1,101 @@
+{
+ "autoname": "B-.YY.###",
+ "creation": "2024-01-25 08:42:57.757831",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "facility",
+  "column_break_2",
+  "inspection_date",
+  "details_section",
+  "area",
+  "column_break_4",
+  "volume",
+  "existing_device",
+  "existing_device_type",
+  "bericht_section",
+  "report"
+ ],
+ "fields": [
+  {
+   "fieldname": "facility",
+   "fieldtype": "Link",
+   "label": "Facility",
+   "options": "Facility"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inspection_date",
+   "fieldtype": "Date",
+   "label": "Datum"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Int",
+   "label": "Area (m2)"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "volume",
+   "fieldtype": "Int",
+   "label": "Volume (m3)"
+  },
+  {
+   "default": "0",
+   "fieldname": "existing_device",
+   "fieldtype": "Check",
+   "label": "Existing device"
+  },
+  {
+   "depends_on": "eval: doc.existing_device == 1",
+   "fieldname": "existing_device_type",
+   "fieldtype": "Select",
+   "label": "Existing device type",
+   "options": "Typ 1\nTyp 2\nTyp 3"
+  },
+  {
+   "fieldname": "bericht_section",
+   "fieldtype": "Section Break",
+   "label": "Bericht"
+  },
+  {
+   "fieldname": "report",
+   "fieldtype": "Text Editor",
+   "label": "Report"
+  }
+ ],
+ "modified": "2024-02-02 08:22:31.591585",
+ "modified_by": "Administrator",
+ "module": "psag",
+ "name": "Inspection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

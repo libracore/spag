@@ -8,3 +8,6 @@ DocType: Inspection,Area (m2),Fläche (m2)
 DocType: Inspection,Volume (m3),Volumen (m3)
 DocType: Inspection,Existing device,Bestehendes Gerät
 DocType: Inspection,Existing device type,Bestehendes Gerät Typ
+DocType: Customer,Industry,Branche
+DocType: Facility,Employee responsible,Zuständiger Mitarbeiter
+DocType: Facility,Employee responsible,Zuständiger Mitarbeiter
