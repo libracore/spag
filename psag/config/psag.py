@@ -56,6 +56,12 @@ def get_data():
                    "description": _("Facility")
                 },
                 {
+                   "type": "page",
+                   "name": "facility-overview",
+                   "label": _("Facility Overview"),
+                   "description": _("Facility Overview")
+                },
+                {
                    "type": "doctype",
                    "name": "Inspection",
                    "label": _("Inspection"),
