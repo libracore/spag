@@ -2,6 +2,7 @@
 # License: GNU General Public License v3. See license.txt
 import frappe
 
+@frappe.whitelist()
 def get_gps_coordinates(street, location):
     url = "https://nominatim.openstreetmap.org/search?q={street},{location}&format=json&polygon=1&addressdetails=0".format(street=street, location=location)
     response = requests.get(url)
