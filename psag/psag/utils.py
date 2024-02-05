@@ -12,7 +12,7 @@ def get_gps_coordinates(street, location):
     return gps_coordinates
     
 @frappe.whitelist()
-def get_geographic_environment(facility_name=None, radius=0.1, address=None):
+def get_geographic_environment(facility_name=None, radius=1, address=None):
     data = None
     if frappe.db.exists("Facility", facility_name):
         obj = frappe.get_doc("Facility", facility_name)
@@ -51,7 +51,7 @@ def get_geographic_environment(facility_name=None, radius=0.1, address=None):
             AND `tabFacility`.`gps_longitude` >= ({gps_long} - {long_offset})
             AND `tabFacility`.`gps_longitude` <= ({gps_long} + {long_offset})
             AND `tabFacility`.`name` != "{reference}"
-            {projects_filter};
+            ;
     """.format(reference=facility_name, gps_lat=data['gps_lat'], lat_offset=float(radius),
         gps_long=data['gps_long'], long_offset=(2 * float(radius))
     ), as_dict=True)

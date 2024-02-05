@@ -38,30 +38,19 @@ frappe.facility_overview = {
         frappe.facility_overview.start_wait();
         
     },
-    run: function() {
-        // add on enter listener to filters
-        document.getElementById("address").addEventListener("keyup", function(event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                var address = this.value;
-                if (address) {
-                    frappe.facility_overview.render_map(address);
-                }
-            }
-        });
-        
+    run: function() {        
         frappe.facility_overview.render_map();
     },
     render_map: function(address=null) {
         // fetch object
-        var object_name = frappe.facility_overview.get_arguments();
+        var facility_name = frappe.facility_overview.get_arguments();
         var gps_lat = 46.984338787480695;
         var gps_long = 8.411922818855178;
         var initial_zoom = 13;
         var geo = null;
         var radius = 0.1;
-        if ((!object_name) && (!address)) {
-            radius = 10;    // no object: load full map
+        if ((!facility_name) && (!address)) {
+            radius = 50;    // no object: load full map
         }
         
         // prepare various icons
