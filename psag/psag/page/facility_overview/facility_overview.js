@@ -38,29 +38,18 @@ frappe.facility_overview = {
         frappe.facility_overview.start_wait();
         
     },
-    run: function() {
-        // add on enter listener to filters
-        document.getElementById("address").addEventListener("keyup", function(event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                var address = this.value;
-                if (address) {
-                    frappe.facility_overview.render_map(address);
-                }
-            }
-        });
-        
+    run: function() {        
         frappe.facility_overview.render_map();
     },
     render_map: function(address=null) {
         // fetch object
-        var object_name = frappe.facility_overview.get_arguments();
+        var facility_name = frappe.facility_overview.get_arguments();
         var gps_lat = 46.984338787480695;
         var gps_long = 8.411922818855178;
-        var initial_zoom = 13;
+        var initial_zoom = 8;
         var geo = null;
         var radius = 0.1;
-        if ((!object_name) && (!address)) {
+        if ((!facility_name) && (!address)) {
             radius = 10;    // no object: load full map
         }
         
@@ -81,7 +70,7 @@ frappe.facility_overview = {
         window.dispatchEvent(new Event('resize')); 
         
         document.getElementById("overlay-text").innerHTML = "<p>Objekte suchen...</p>";
-
+console.log(radius);
         frappe.call({
             'method': 'psag.psag.utils.get_geographic_environment',
             'args': { 
@@ -101,19 +90,15 @@ frappe.facility_overview = {
                 
                 // add marker for the reference object
                 L.marker([gps_lat, gps_long], {'icon': red_icon}).addTo(map)
-                    .bindPopup(get_popup_str(object_name));
+                    .bindPopup(get_popup_str(facility_name));
                 // add other markers
                 if (geo) {
                     console.log(geo);
                     for (var i = 0; i < geo.environment.length; i++) {
                         
                         // set icon color
-                        var icon = grey_icon;
-                        if (geo.environment[i].sales_order) {
-                            icon = green_icon;
-                        } else if (geo.environment[i].rate) {
-                            icon = blue_icon;
-                        }
+                        var icon = blue_icon;
+
                         L.marker([geo.environment[i].gps_lat, geo.environment[i].gps_long],
                             {'icon': icon}).addTo(map)
                             .bindPopup(get_popup_str(geo.environment[i].facility));
