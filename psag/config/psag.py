@@ -7,6 +7,12 @@ def get_data():
             "label": _("Selling"),
             "icon": "fa fa-tools",
             "items": [
+				{
+                   "type": "doctype",
+                   "name": "Item",
+                   "label": _("Item"),
+                   "description": _("Item")
+                },
                 {
                    "type": "doctype",
                    "name": "Customer",
@@ -36,6 +42,24 @@ def get_data():
                    "name": "Sales Invoice",
                    "label": _("Sales Invoice"),
                    "description": _("Sales Invoice")
+                }
+            ]
+        },
+        {
+            "label": _("Paul Schenk AG"),
+            "icon": "fa fa-tools",
+            "items": [
+                {
+                   "type": "doctype",
+                   "name": "Facility",
+                   "label": _("Facility"),
+                   "description": _("Facility")
+                },
+                {
+                   "type": "doctype",
+                   "name": "Inspection",
+                   "label": _("Inspection"),
+                   "description": _("Inspection")
                 }
             ]
         }

@@ -11,3 +11,7 @@ DocType: Inspection,Existing device type,Bestehendes Gerät Typ
 DocType: Customer,Industry,Branche
 DocType: Facility,Employee responsible,Zuständiger Mitarbeiter
 DocType: Facility,Employee responsible,Zuständiger Mitarbeiter
+DocType: Quotation,Document Title,Dokumenttitel
+DocType: Sales Order,Document Title,Dokumenttitel
+DocType: Delivery Note,Document Title,Dokumenttitel
+DocType: Sales Invoice,Document Title,Dokumenttitel
