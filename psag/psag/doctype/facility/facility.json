@@ -87,16 +87,16 @@
   },
   {
    "fieldname": "gps_latitude",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "label": "GPS Latitude"
   },
   {
    "fieldname": "gps_longitude",
-   "fieldtype": "Data",
-   "label": "GPS Longitude"
+   "fieldtype": "Float",
+   "label": "GPS longitude"
   }
  ],
- "modified": "2024-02-05 17:25:15.679652",
+ "modified": "2024-02-05 18:31:05.393697",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Facility",
