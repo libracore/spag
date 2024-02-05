@@ -15,3 +15,4 @@ DocType: Quotation,Document Title,Dokumenttitel
 DocType: Sales Order,Document Title,Dokumenttitel
 DocType: Delivery Note,Document Title,Dokumenttitel
 DocType: Sales Invoice,Document Title,Dokumenttitel
+DocType: Facility,Address,Adresse

@@ -15,9 +15,10 @@
   "column_break_3",
   "volume",
   "address_and_contact_section",
-  "address_html",
-  "column_break_8",
-  "contact_html"
+  "address",
+  "column_break_12",
+  "gps_latitude",
+  "gps_longitude"
  ],
  "fields": [
   {
@@ -58,22 +59,6 @@
    "label": "Address and Contact"
   },
   {
-   "fieldname": "address_html",
-   "fieldtype": "HTML",
-   "label": "Address HTML",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_8",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "contact_html",
-   "fieldtype": "HTML",
-   "label": "Contact HTML",
-   "read_only": 1
-  },
-  {
    "fieldname": "employee_responsible",
    "fieldtype": "Link",
    "label": "Employee responsible",
@@ -89,9 +74,29 @@
    "fieldtype": "Data",
    "label": "Employee responsible",
    "read_only": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gps_latitude",
+   "fieldtype": "Data",
+   "label": "GPS Latitude"
+  },
+  {
+   "fieldname": "gps_longitude",
+   "fieldtype": "Data",
+   "label": "GPS Longitude"
   }
  ],
- "modified": "2024-02-02 14:39:09.421771",
+ "modified": "2024-02-05 17:25:15.679652",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Facility",
