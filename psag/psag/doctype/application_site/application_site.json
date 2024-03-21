@@ -85,7 +85,7 @@
    "read_only": 1
   }
  ],
- "modified": "2024-03-21 16:37:23.821305",
+ "modified": "2024-03-21 21:16:06.846625",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Application Site",
@@ -104,7 +104,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "title_field": "application_site_name",

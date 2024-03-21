@@ -57,6 +57,18 @@ def get_data():
                 },
                 {
                    "type": "doctype",
+                   "name": "Maintenance Event",
+                   "label": _("Maintenance Event"),
+                   "description": _("Maintenance Event")
+                },
+                {
+                   "type": "report",
+                   "name": "Open Maintenance Events",
+                   "doctype": "Maintenance Event",
+                   "is_query_report": True
+                },
+                {
+                   "type": "doctype",
                    "name": "Service Event",
                    "label": _("Service Event"),
                    "description": _("Service Event")
@@ -68,6 +80,18 @@ def get_data():
                    "description": _("Service Map")
                 }
                 
+            ]
+        },
+        {
+            "label": _("Setup"),
+            "icon": "fa fa-tools",
+            "items": [
+                {
+                   "type": "doctype",
+                   "name": "Responsible",
+                   "label": _("Responsible"),
+                   "description": _("Responsible")
+                }
             ]
         }
     ]
