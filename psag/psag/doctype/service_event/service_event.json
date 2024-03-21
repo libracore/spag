@@ -1,0 +1,196 @@
+{
+ "autoname": "T-.YY.####.",
+ "creation": "2024-03-21 10:56:35.206375",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event_type",
+  "planned_start",
+  "planned_end",
+  "target_time",
+  "column_break_2",
+  "application_site",
+  "contact_person",
+  "status",
+  "urgent",
+  "gps_coordinates_section",
+  "gps_coordinates",
+  "column_break_10",
+  "gps_latitude",
+  "gps_longitude",
+  "service_report",
+  "technician",
+  "column_break_17",
+  "working_time",
+  "outbound",
+  "inbound",
+  "total_km",
+  "section_break_21",
+  "material",
+  "section_break_24",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Select",
+   "label": "Event Type",
+   "options": "Service\nTermin",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval: doc.event_type == \"Service\"",
+   "fieldname": "application_site",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Application Site",
+   "options": "Application Site"
+  },
+  {
+   "fieldname": "target_time",
+   "fieldtype": "Int",
+   "label": "Target time (min.)"
+  },
+  {
+   "default": "0",
+   "fieldname": "urgent",
+   "fieldtype": "Check",
+   "label": "Urgent"
+  },
+  {
+   "depends_on": "eval: doc.event_type == \"Service\"",
+   "fieldname": "gps_coordinates_section",
+   "fieldtype": "Section Break",
+   "label": "GPS Coordinates"
+  },
+  {
+   "fetch_from": "application_site.gps_coordinates",
+   "fieldname": "gps_coordinates",
+   "fieldtype": "Data",
+   "label": "GPS Coordinates"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "application_site.gps_latitude",
+   "fieldname": "gps_latitude",
+   "fieldtype": "Float",
+   "label": "GPS Latitude"
+  },
+  {
+   "fetch_from": "application_site.gps_longitude",
+   "fieldname": "gps_longitude",
+   "fieldtype": "Float",
+   "label": "GPS Longitude"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "planned_start",
+   "fieldtype": "Datetime",
+   "label": "Planned Start"
+  },
+  {
+   "fieldname": "planned_end",
+   "fieldtype": "Datetime",
+   "label": "Planned End"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "For planning\nPlanned\nIn progress\nCompleted"
+  },
+  {
+   "depends_on": "eval: doc.event_type == \"Service\"",
+   "fieldname": "service_report",
+   "fieldtype": "Section Break",
+   "label": "Service Report"
+  },
+  {
+   "fieldname": "technician",
+   "fieldtype": "Data",
+   "label": "Technician"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "working_time",
+   "fieldtype": "Float",
+   "label": "Working Time (h)"
+  },
+  {
+   "fieldname": "outbound",
+   "fieldtype": "Float",
+   "label": "Outbound (h)"
+  },
+  {
+   "fieldname": "inbound",
+   "fieldtype": "Float",
+   "label": "Inbound (h)"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Table",
+   "label": "Material",
+   "options": "Service Event Material"
+  },
+  {
+   "depends_on": "eval: doc.event_type == \"Service\"",
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_km",
+   "fieldtype": "Int",
+   "label": "Total KM"
+  },
+  {
+   "depends_on": "eval: doc.event_type == \"Termin\"",
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "modified": "2024-03-21 17:13:35.383591",
+ "modified_by": "Administrator",
+ "module": "psag",
+ "name": "Service Event",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

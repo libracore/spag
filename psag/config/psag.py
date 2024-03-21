@@ -51,22 +51,23 @@ def get_data():
             "items": [
                 {
                    "type": "doctype",
-                   "name": "Facility",
-                   "label": _("Facility"),
-                   "description": _("Facility")
-                },
-                {
-                   "type": "page",
-                   "name": "facility-overview",
-                   "label": _("Facility Overview"),
-                   "description": _("Facility Overview")
+                   "name": "Application Site",
+                   "label": _("Application Site"),
+                   "description": _("Application Site")
                 },
                 {
                    "type": "doctype",
-                   "name": "Inspection",
-                   "label": _("Inspection"),
-                   "description": _("Inspection")
+                   "name": "Service Event",
+                   "label": _("Service Event"),
+                   "description": _("Service Event")
+                },
+                {
+                   "type": "page",
+                   "name": "service-map",
+                   "label": _("Service Map"),
+                   "description": _("Service Map")
                 }
+                
             ]
         }
     ]

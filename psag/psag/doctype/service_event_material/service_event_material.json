@@ -1,0 +1,47 @@
+{
+ "creation": "2024-03-21 15:55:59.617863",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "qty"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2024-03-21 16:03:16.938438",
+ "modified_by": "Administrator",
+ "module": "psag",
+ "name": "Service Event Material",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

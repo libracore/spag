@@ -99,7 +99,7 @@
  "modified": "2024-02-05 18:31:05.393697",
  "modified_by": "Administrator",
  "module": "psag",
- "name": "Facility",
+ "name": "Location",
  "owner": "Administrator",
  "permissions": [
   {

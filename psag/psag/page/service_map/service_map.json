@@ -1,0 +1,26 @@
+{
+ "content": null,
+ "creation": "2024-02-05 17:31:43.001869",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-03-21 11:36:59.674792",
+ "modified_by": "Administrator",
+ "module": "psag",
+ "name": "service-map",
+ "owner": "Administrator",
+ "page_name": "service-map",
+ "roles": [
+  {
+   "role": "Projects User"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Service Map"
+}
