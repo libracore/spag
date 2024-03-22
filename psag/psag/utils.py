@@ -59,8 +59,4 @@ def get_geographic_environment(facility_name=None, radius=1, address=None):
     ), as_dict=True)
     
     return data
-    
-def fetch_gps_coordinates(self, event):
-	gps_coordinates = self.gps_coordinates
-	frappe.log_error(gps_coordinates, "gps_coordinates")
-	return
+

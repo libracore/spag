@@ -6,21 +6,19 @@ frappe.ui.form.on('Application Site', {
 		fetch_gps_coordinates(frm);
 	},
 	customer_address: function(frm) {
-		set_address_display_and_gps(frm);
+		set_address_display(frm);
 	}
 });
 
-function set_address_display_and_gps(frm) {
+function set_address_display(frm) {
 	if (frm.doc.customer_address) {
 		frappe.call({
-			'method': 'psag.psag.doctype.application_site.application_site.set_address_display_and_gps',
+			'method': 'psag.psag.doctype.application_site.application_site.set_address_display',
 			'args': {
 				'address': frm.doc.customer_address
 			},
 			'callback': function(response) {
-				cur_frm.set_value('address_display', response.message[0]);
-				var gps_coordinates = response.message[1].lat + ", " + response.message[1].lon
-				cur_frm.set_value('gps_coordinates', gps_coordinates);
+				cur_frm.set_value('address_display', response.message);
 			}
 		});
 	} else {
