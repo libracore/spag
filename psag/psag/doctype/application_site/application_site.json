@@ -56,12 +56,16 @@
   {
    "fieldname": "gps_latitude",
    "fieldtype": "Float",
-   "label": "GPS Latitude"
+   "hidden": 1,
+   "label": "GPS Latitude",
+   "precision": "7"
   },
   {
    "fieldname": "gps_longitude",
    "fieldtype": "Float",
-   "label": "GPS Longitude"
+   "hidden": 1,
+   "label": "GPS Longitude",
+   "precision": "7"
   },
   {
    "fieldname": "gps_coordinates",
@@ -85,7 +89,7 @@
    "read_only": 1
   }
  ],
- "modified": "2024-03-21 21:16:06.846625",
+ "modified": "2024-03-22 12:08:28.951585",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Application Site",

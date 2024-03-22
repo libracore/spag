@@ -79,11 +79,11 @@ app_license = "AGPL"
 # ---------------
 # Hook on document methods and events
 
-#doc_events = {
-#	"Facility": {
-#		"validate": "psag.psag.utils.fetch_inspection"
-#	}
-#}
+# ~ doc_events = {
+	# ~ "Application Site": {
+		# ~ "gps_coordinates": "psag.psag.utils.fetch_gps_coordinates"
+	# ~ }
+# ~ }
 
 # Scheduled Tasks
 # ---------------

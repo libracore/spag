@@ -12,6 +12,8 @@
   "column_break_2",
   "application_site",
   "application_site_name",
+  "maintenance_event",
+  "customer",
   "customer_name",
   "contact_person",
   "status",
@@ -48,6 +50,8 @@
   {
    "allow_in_quick_entry": 1,
    "depends_on": "eval: doc.event_type == \"Service\"",
+   "fetch_from": "maintenance_event.application_site",
+   "fetch_if_empty": 1,
    "fieldname": "application_site",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -69,6 +73,7 @@
    "depends_on": "eval: doc.event_type == \"Service\"",
    "fieldname": "gps_coordinates_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "GPS Coordinates"
   },
   {
@@ -184,15 +189,29 @@
    "read_only": 1
   },
   {
-   "fetch_from": "application_site.customer_name",
+   "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Customer Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "maintenance_event",
+   "fieldtype": "Link",
+   "label": "Maintenance Event",
+   "options": "Maintenance Event"
+  },
+  {
+   "fetch_from": "application_site.customer",
+   "fetch_if_empty": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
   }
  ],
- "modified": "2024-03-21 21:28:39.707261",
+ "modified": "2024-03-22 11:26:06.691910",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Service Event",

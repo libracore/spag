@@ -1,6 +1,7 @@
 # Copyright (c) 2021-2024, libracore and Contributors
 # License: GNU General Public License v3. See license.txt
 import frappe
+import requests
 
 @frappe.whitelist()
 def get_gps_coordinates(street, location):
@@ -58,3 +59,8 @@ def get_geographic_environment(facility_name=None, radius=1, address=None):
     ), as_dict=True)
     
     return data
+    
+def fetch_gps_coordinates(self, event):
+	gps_coordinates = self.gps_coordinates
+	frappe.log_error(gps_coordinates, "gps_coordinates")
+	return

@@ -25,4 +25,6 @@ def set_address_display_and_gps(address):
 	
 	address_display = frappe.render_template(html, address_sql[0])
 	
-	return address_display
+	gps_coordinates = get_gps_coordinates(address_sql[0].address_line1, address_sql[0].city)
+	
+	return address_display, gps_coordinates
