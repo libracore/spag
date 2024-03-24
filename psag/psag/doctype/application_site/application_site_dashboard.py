@@ -6,11 +6,7 @@ def get_data():
       'transactions': [
          {
             'label': _("Field Service"),
-            'items': ['Maintenance Event', 'Open Maintenance Events', 'Service Event', 'service-map']
-         },
-         {
-            'label': _("Selling"),
-            'items': ['Sales Order']
+            'items': ['Maintenance Event']
          }
       ]
    }

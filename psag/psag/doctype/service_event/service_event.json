@@ -21,8 +21,6 @@
   "gps_coordinates_section",
   "gps_coordinates",
   "column_break_10",
-  "gps_latitude",
-  "gps_longitude",
   "service_report",
   "technician",
   "column_break_17",
@@ -85,18 +83,6 @@
   {
    "fieldname": "column_break_10",
    "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "application_site.gps_latitude",
-   "fieldname": "gps_latitude",
-   "fieldtype": "Float",
-   "label": "GPS Latitude"
-  },
-  {
-   "fetch_from": "application_site.gps_longitude",
-   "fieldname": "gps_longitude",
-   "fieldtype": "Float",
-   "label": "GPS Longitude"
   },
   {
    "fieldname": "contact_person",
@@ -203,7 +189,7 @@
    "options": "Maintenance Event"
   },
   {
-   "fetch_from": "application_site.customer",
+   "fetch_from": "maintenance_event.customer",
    "fetch_if_empty": 1,
    "fieldname": "customer",
    "fieldtype": "Link",
@@ -211,7 +197,7 @@
    "options": "Customer"
   }
  ],
- "modified": "2024-03-22 11:26:06.691910",
+ "modified": "2024-03-24 13:26:29.583779",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Service Event",
