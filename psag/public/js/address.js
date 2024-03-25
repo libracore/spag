@@ -1,8 +1,16 @@
 frappe.ui.form.on('Address', {
     before_save: function(frm) {
-		set_gps_coordinates(frm);
 		fetch_gps_coordinates(frm);
-    }
+    },
+    address_line1: function(frm) {
+		set_gps_coordinates(frm);
+	},
+	pincode: function(frm) {
+		set_gps_coordinates(frm);
+	},
+	city: function(frm) {
+		set_gps_coordinates(frm);
+	}
 });
 
 function set_gps_coordinates(frm) {
