@@ -10,7 +10,7 @@
   "customer",
   "customer_name",
   "address_and_contact_section",
-  "customer_address",
+  "site_address",
   "address_display",
   "column_break_7",
   "gps_coordinates",
@@ -81,19 +81,19 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "customer_address",
-   "fieldtype": "Link",
-   "label": "Customer Address",
-   "options": "Address"
-  },
-  {
    "fieldname": "address_display",
    "fieldtype": "Small Text",
    "label": "Address",
    "read_only": 1
+  },
+  {
+   "fieldname": "site_address",
+   "fieldtype": "Link",
+   "label": "Site Address",
+   "options": "Address"
   }
  ],
- "modified": "2024-03-24 12:52:41.712869",
+ "modified": "2024-03-25 14:14:15.333439",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Application Site",

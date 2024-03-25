@@ -21,7 +21,7 @@ def set_address_display(address):
 								FROM `tabAddress`
 								WHERE `name` = '{address}'""".format(address=address), as_dict=True)
 	
-	html = frappe.db.get_value("Address Template", "Switzerland", "template")
+	html = frappe.db.get_value("Address Template", {"is_default": 1}, "template")
 	
 	address_display = frappe.render_template(html, address_sql[0])
 	

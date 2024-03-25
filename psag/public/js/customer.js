@@ -5,7 +5,7 @@
 cur_frm.dashboard.add_transactions([
 	{
 		'label': 'Field Service',
-		'items': ['Application Site']
+		'items': ['Application Site', 'Service Event']
 	}
 ]);
 

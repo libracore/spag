@@ -46,7 +46,7 @@ def get_data():
             ]
         },
         {
-            "label": _("Paul Schenk AG"),
+            "label": _("Field Service"),
             "icon": "fa fa-tools",
             "items": [
                 {
@@ -83,7 +83,7 @@ def get_data():
             ]
         },
         {
-            "label": _("Setup"),
+            "label": _("Settings"),
             "icon": "fa fa-tools",
             "items": [
                 {
