@@ -18,6 +18,7 @@
   "customer",
   "customer_name",
   "responsible",
+  "color",
   "address_and_contact_section",
   "site_address",
   "address_display",
@@ -221,9 +222,15 @@
    "fieldtype": "Small Text",
    "label": "Address",
    "read_only": 1
+  },
+  {
+   "fetch_from": "responsible.color",
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Color"
   }
  ],
- "modified": "2024-03-26 17:04:04.712272",
+ "modified": "2024-03-26 22:23:13.944101",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Service Event",
