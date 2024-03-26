@@ -227,10 +227,11 @@
    "fetch_from": "responsible.color",
    "fieldname": "color",
    "fieldtype": "Color",
+   "hidden": 1,
    "label": "Color"
   }
  ],
- "modified": "2024-03-26 22:23:13.944101",
+ "modified": "2024-03-26 22:42:36.570699",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Service Event",
