@@ -6,11 +6,23 @@ frappe.views.calendar["Service Event"] = {
 		"allDay": "all_day",
 		"title": "application_site_name",
 		"status": "status",
-		"color": "color"
+		"eventColor": "color"
 	},
 	style_map: {
 		"Public": "success",
 		"Private": "info"
 	},
-	get_events_method: "frappe.desk.doctype.event.event.get_events"
+	color_map: {
+ 		"yellow": "yellow",
+ 		"red": "red"
+ 	},
+	filters: [
+		{
+			"fieldtype": "Link",
+			"fieldname": "responsible",
+			"options": "Responsible",
+			"label": __("Responsible")
+		}
+	],
+	get_events_method: "psag.psag.doctype.service_event.service_event.get_service_events"
 }

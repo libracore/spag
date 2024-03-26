@@ -13,9 +13,7 @@
   "site_address",
   "address_display",
   "column_break_7",
-  "gps_coordinates",
-  "gps_latitude",
-  "gps_longitude"
+  "gps_coordinates"
  ],
  "fields": [
   {
@@ -54,23 +52,7 @@
    "label": "Address and Contact"
   },
   {
-   "fetch_from": "customer_address.gps_latitude",
-   "fieldname": "gps_latitude",
-   "fieldtype": "Float",
-   "label": "GPS Latitude",
-   "precision": "7",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "customer_address.gps_longitude",
-   "fieldname": "gps_longitude",
-   "fieldtype": "Float",
-   "label": "GPS Longitude",
-   "precision": "7",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "customer_address.gps_coordinates",
+   "fetch_from": "site_address.gps_coordinates",
    "fieldname": "gps_coordinates",
    "fieldtype": "Data",
    "label": "GPS Coordinates",
@@ -93,7 +75,7 @@
    "options": "Address"
   }
  ],
- "modified": "2024-03-25 14:14:15.333439",
+ "modified": "2024-03-26 15:33:18.690956",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Application Site",

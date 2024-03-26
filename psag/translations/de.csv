@@ -30,7 +30,7 @@ DocType: Service Event,Target time (min.),Vorgabezeit (min.)
 DocType: Service Event,Application Site,Einsatzort
 DocType: Service Event,Application Site Name,Einsatzort Name
 DocType: Service Event,Customer Name,Kundenname
-DocType: Service Event,Contact Person,Ansprechspartner
+DocType: Service Event,Responsible,Ansprechspartner
 DocType: Service Event,Urgent,Dringend
 DocType: Service Event,GPS Coordinates,GPS Koordinaten
 DocType: Service Event,GPS Latitude,GPS Breitengrad
