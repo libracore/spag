@@ -1,4 +1,11 @@
 frappe.ui.form.on('Address', {
+    refresh: function(frm) {
+		if ((frm.doc.address_line1) && (frm.doc.pincode) && (frm.doc.city)) {
+			frm.add_custom_button(__("Locate"), function() {
+				set_gps_coordinates(frm);
+			});
+		}
+    },
     before_save: function(frm) {
 		fetch_gps_coordinates(frm);
     },
@@ -32,7 +39,7 @@ function set_gps_coordinates(frm) {
 }
 
 function fetch_gps_coordinates(frm) {
-	var gps_coordinates = frm.doc.gps_coordinates
+	var gps_coordinates = frm.doc.gps_coordinates;
 	if (gps_coordinates) {
 		var split = gps_coordinates.split(", ");
 		var gps_latitude = split[0];
