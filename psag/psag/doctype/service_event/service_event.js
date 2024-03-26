@@ -2,12 +2,8 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Service Event', {
-	refresh: function(frm) {
-		setTimeout(function(){
-			if (frm.doc.__islocal && frm.doc.customer) {
-				set_responsible(frm);
-			}
-		}, 500);
+	before_save: function(frm) {
+		set_address_display(frm);
 	},
 	planned_start: function(frm) {
 		set_default_end(frm);
@@ -27,16 +23,18 @@ function set_default_end(frm) {
 	}
 }
 
-function set_responsible(frm) {
-	frappe.call({
-		'method': 'psag.psag.doctype.service_event.service_event.get_responsible',
-		'args': {
-			'customer': frm.doc.customer
-		},
-		'callback': function(response) {
-			if (!frm.doc.responsible) {
-				cur_frm.set_value('responsible', response.message);
+function set_address_display(frm) {
+	if (frm.doc.site_address) {
+		frappe.call({
+			'method': 'psag.psag.doctype.application_site.application_site.set_address_display',
+			'args': {
+				'address': frm.doc.site_address
+			},
+			'callback': function(response) {
+				cur_frm.set_value('address_display', response.message);
 			}
-		}
-	});
+		});
+	} else {
+		cur_frm.set_value('address_display', "");
+	}
 }

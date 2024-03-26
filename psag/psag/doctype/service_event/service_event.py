@@ -24,8 +24,3 @@ def get_service_events():
 	
 	return events
 	
-@frappe.whitelist()
-def get_responsible(customer):
-	responsible = frappe.db.get_value("Customer", customer, "responsible")
-	return responsible
-	

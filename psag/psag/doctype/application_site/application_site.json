@@ -9,6 +9,7 @@
   "column_break_2",
   "customer",
   "customer_name",
+  "responsible",
   "address_and_contact_section",
   "site_address",
   "address_display",
@@ -73,9 +74,16 @@
    "fieldtype": "Link",
    "label": "Site Address",
    "options": "Address"
+  },
+  {
+   "fetch_from": "customer.responsible",
+   "fieldname": "responsible",
+   "fieldtype": "Link",
+   "label": "Responsible",
+   "options": "Responsible"
   }
  ],
- "modified": "2024-03-26 15:33:18.690956",
+ "modified": "2024-03-26 16:46:08.673384",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Application Site",

@@ -5,17 +5,21 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "billing_type",
+  "start_date",
+  "interval",
+  "interval_date",
+  "next_date",
+  "disabled",
+  "column_break_3",
   "application_site",
   "application_site_name",
   "customer",
   "customer_name",
-  "billing_type",
-  "disabled",
-  "column_break_3",
-  "start_date",
-  "interval",
-  "interval_date",
-  "next_date"
+  "responsible",
+  "address_and_contact_section",
+  "site_address",
+  "address_display"
  ],
  "fields": [
   {
@@ -90,9 +94,35 @@
    "fieldtype": "Link",
    "label": "Customer",
    "options": "Customer"
+  },
+  {
+   "fetch_from": "application_site.responsible",
+   "fetch_if_empty": 1,
+   "fieldname": "responsible",
+   "fieldtype": "Data",
+   "label": "Responsible"
+  },
+  {
+   "fieldname": "address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fetch_from": "application_site.site_address",
+   "fetch_if_empty": 1,
+   "fieldname": "site_address",
+   "fieldtype": "Link",
+   "label": "Site Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
   }
  ],
- "modified": "2024-03-22 10:21:57.363972",
+ "modified": "2024-03-26 17:02:02.638117",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Maintenance Event",

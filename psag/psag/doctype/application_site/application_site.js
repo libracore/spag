@@ -12,9 +12,6 @@ frappe.ui.form.on('Application Site', {
 			 }
 		}
 	},
-	validate: function(frm) {
-		fetch_gps_coordinates(frm);
-	},
 	site_address: function(frm) {
 		set_address_display(frm);
 	}
@@ -36,16 +33,16 @@ function set_address_display(frm) {
 	}
 }
 
-function fetch_gps_coordinates(frm) {
-	var gps_coordinates = frm.doc.gps_coordinates
-	if (gps_coordinates) {
-		var split = gps_coordinates.split(", ");
-		var gps_latitude = split[0];
-		var gps_longitude = split[1];
-		cur_frm.set_value('gps_latitude', gps_latitude);
-		cur_frm.set_value('gps_longitude', gps_longitude);
-	} else {
-		cur_frm.set_value('gps_latitude', "");
-		cur_frm.set_value('gps_longitude', "");
-	}	
-}
+//~ function fetch_gps_coordinates(frm) {
+	//~ var gps_coordinates = frm.doc.gps_coordinates
+	//~ if (gps_coordinates) {
+		//~ var split = gps_coordinates.split(", ");
+		//~ var gps_latitude = split[0];
+		//~ var gps_longitude = split[1];
+		//~ cur_frm.set_value('gps_latitude', gps_latitude);
+		//~ cur_frm.set_value('gps_longitude', gps_longitude);
+	//~ } else {
+		//~ cur_frm.set_value('gps_latitude', "");
+		//~ cur_frm.set_value('gps_longitude', "");
+	//~ }	
+//~ }
