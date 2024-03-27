@@ -14,7 +14,7 @@ def get_gps_coordinates(street, location):
     return gps_coordinates
     
 @frappe.whitelist()
-def get_geographic_environment(facility_name=None, radius=1, address=None):
+def get_geographic_environment(facility_name=None, radius=1, address=None, service_events=False):
     data = None
     if frappe.db.exists("Facility", facility_name):
         obj = frappe.get_doc("Facility", facility_name)
@@ -41,22 +41,47 @@ def get_geographic_environment(facility_name=None, radius=1, address=None):
             'gps_long': 8.411922818855178
         }
     
-    data['environment'] = frappe.db.sql("""
-        SELECT 
-            `tabFacility`.`name` AS `facility`, 
-            `tabFacility`.`gps_latitude` AS `gps_lat`, 
-            `tabFacility`.`gps_longitude` AS `gps_long`
-        FROM `tabFacility`
-        WHERE 
-            `tabFacility`.`gps_latitude` >= ({gps_lat} - {lat_offset})
-            AND `tabFacility`.`gps_latitude` <= ({gps_lat} + {lat_offset})
-            AND `tabFacility`.`gps_longitude` >= ({gps_long} - {long_offset})
-            AND `tabFacility`.`gps_longitude` <= ({gps_long} + {long_offset})
-            AND `tabFacility`.`name` != "{reference}"
-            ;
-    """.format(reference=facility_name, gps_lat=data['gps_lat'], lat_offset=float(radius),
-        gps_long=data['gps_long'], long_offset=(2 * float(radius))
-    ), as_dict=True)
+    if service_events:
+        # base data on service events
+        data['environment'] = frappe.db.sql("""
+            SELECT 
+                `tabService Event`.`name` AS `service_event`,
+                `tabService Event`.`application_site_name` AS `application_site_name`, 
+                `tabService Event`.`gps_latitude` AS `gps_lat`, 
+                `tabService Event`.`gps_longitude` AS `gps_long`,
+                `tabService Event`.`status` AS `status`,
+                `tabService Event`.`address_display` AS `address_display`,
+                `tabService Event`.`responsible` AS `responsible`
+            FROM `tabService Event`
+            WHERE 
+                `tabService Event`.`gps_latitude` >= ({gps_lat} - {lat_offset})
+                AND `tabService Event`.`gps_latitude` <= ({gps_lat} + {lat_offset})
+                AND `tabService Event`.`gps_longitude` >= ({gps_long} - {long_offset})
+                AND `tabService Event`.`gps_longitude` <= ({gps_long} + {long_offset})
+                AND `tabService Event`.`name` != "{reference}"
+                AND `tabService Event`.`status` != "Completed"
+                ;
+        """.format(reference=facility_name, gps_lat=data['gps_lat'], lat_offset=float(radius),
+            gps_long=data['gps_long'], long_offset=(2 * float(radius))
+        ), as_dict=True)
+    else:
+        # pull environment based on facilities
+        data['environment'] = frappe.db.sql("""
+            SELECT 
+                `tabFacility`.`name` AS `facility`, 
+                `tabFacility`.`gps_latitude` AS `gps_lat`, 
+                `tabFacility`.`gps_longitude` AS `gps_long`
+            FROM `tabFacility`
+            WHERE 
+                `tabFacility`.`gps_latitude` >= ({gps_lat} - {lat_offset})
+                AND `tabFacility`.`gps_latitude` <= ({gps_lat} + {lat_offset})
+                AND `tabFacility`.`gps_longitude` >= ({gps_long} - {long_offset})
+                AND `tabFacility`.`gps_longitude` <= ({gps_long} + {long_offset})
+                AND `tabFacility`.`name` != "{reference}"
+                ;
+        """.format(reference=facility_name, gps_lat=data['gps_lat'], lat_offset=float(radius),
+            gps_long=data['gps_long'], long_offset=(2 * float(radius))
+        ), as_dict=True)
     
     return data
 

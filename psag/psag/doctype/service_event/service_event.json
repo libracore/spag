@@ -23,7 +23,8 @@
   "site_address",
   "address_display",
   "gps_coordinates_section",
-  "gps_coordinates",
+  "gps_latitude",
+  "gps_longitude",
   "column_break_10",
   "service_report",
   "technician",
@@ -76,12 +77,6 @@
    "fieldname": "gps_coordinates_section",
    "fieldtype": "Section Break",
    "hidden": 1,
-   "label": "GPS Coordinates"
-  },
-  {
-   "fetch_from": "application_site.gps_coordinates",
-   "fieldname": "gps_coordinates",
-   "fieldtype": "Data",
    "label": "GPS Coordinates"
   },
   {
@@ -229,9 +224,21 @@
    "fieldtype": "Color",
    "hidden": 1,
    "label": "Color"
+  },
+  {
+   "fetch_from": "site_address.gps_latitude",
+   "fieldname": "gps_latitude",
+   "fieldtype": "Float",
+   "label": "GPS Latitude"
+  },
+  {
+   "fetch_from": "site_address.gps_longitude",
+   "fieldname": "gps_longitude",
+   "fieldtype": "Float",
+   "label": "GPS Longitude"
   }
  ],
- "modified": "2024-03-26 22:42:36.570699",
+ "modified": "2024-03-27 09:14:49.898065",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Service Event",

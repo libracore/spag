@@ -58,6 +58,12 @@ frappe.facility_overview = {
         var red_icon = new L.Icon({'iconUrl': '/assets/psag/images/marker-icon-red.png'});
         var grey_icon = new L.Icon({'iconUrl': '/assets/psag/images/marker-icon-grey.png'});
         var blue_icon = new L.Icon({'iconUrl': '/assets/psag/images/marker-icon.png'});
+        var yellow_icon = new L.Icon({'iconUrl': '/assets/psag/images/marker-icon-yellow.png'});
+        var status_color_map = {
+            "For planning": red_icon,
+            "Planned": yellow_icon,
+            "In progress": green_icon
+        }
         
         // create map     
         document.getElementById('map-container').innerHTML = "<div id='map' style='width: 100%; height: 800px;'></div>";
@@ -76,11 +82,13 @@ console.log(radius);
             'args': { 
                 'facility_name': facility_name,
                 'radius': radius,
-                'address': address
+                'address': address,
+                'service_events': true
             },
             'callback': function(r) {
                 if (r.message) {
                     geo = r.message;
+                    console.log(geo);
                     gps_lat = geo.gps_lat;
                     gps_long = geo.gps_long;
                     map.panTo(new L.LatLng(gps_lat, gps_long));
@@ -89,19 +97,16 @@ console.log(radius);
                 document.getElementById("overlay-text").innerHTML = "<p>" + geo.environment.length + " Objekte platzieren...</p>";
                 
                 // add marker for the reference object
-                L.marker([gps_lat, gps_long], {'icon': red_icon}).addTo(map)
-                    .bindPopup(get_popup_str(facility_name));
+                L.marker([gps_lat, gps_long], {'icon': blue_icon}).addTo(map);
+                
                 // add other markers
                 if (geo) {
                     console.log(geo);
                     for (var i = 0; i < geo.environment.length; i++) {
                         
-                        // set icon color
-                        var icon = blue_icon;
-
                         L.marker([geo.environment[i].gps_lat, geo.environment[i].gps_long],
-                            {'icon': icon}).addTo(map)
-                            .bindPopup(get_popup_str(geo.environment[i].facility));
+                            {'icon': status_color_map[geo.environment[i].status]}).addTo(map)
+                            .bindPopup(get_popup_str(geo.environment[i]));
 
                     }
                 }
@@ -137,10 +142,14 @@ console.log(radius);
     }
 }
 
-function get_popup_str(facility_name) {
-    html = "<b><a href=\"/desk#Form/Facility/" 
-        + (facility_name || "PSAG") + "\" target=\"_blank\">" 
-        + (facility_name || "PSAG") + "</a></b>";
+function get_popup_str(environment) {
+    html = "<b><a href=\"/desk#Form/Service Event/" 
+        + (environment.service_event || "PSAG") + "\" target=\"_blank\">" 
+        + (environment.service_event || "PSAG") + "</a></b><br>"
+        + (environment.application_site_name || "") + "<br>"
+        + (environment.status || "") + "<br>"
+        + (environment.address_display || "")
+        + (environment.responsible || "");
         
     return html;
 }

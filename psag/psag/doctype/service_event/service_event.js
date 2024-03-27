@@ -10,6 +10,9 @@ frappe.ui.form.on('Service Event', {
         // calculate default end
         var planned_end = new Date((new Date(cur_frm.doc.planned_start)).getTime() + (default_duration * 60*60*1000));
         cur_frm.set_value("planned_end", planned_end);
+    },
+    site_address: function(frm) {
+        set_address_display(frm);
     }
 });
 
