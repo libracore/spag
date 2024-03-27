@@ -36,7 +36,10 @@
   "section_break_21",
   "material",
   "section_break_24",
-  "notes"
+  "notes",
+  "sec_checklist",
+  "checklist",
+  "checklist_data"
  ],
  "fields": [
   {
@@ -236,9 +239,26 @@
    "fieldname": "gps_longitude",
    "fieldtype": "Float",
    "label": "GPS Longitude"
+  },
+  {
+   "fieldname": "sec_checklist",
+   "fieldtype": "Section Break",
+   "label": "Checklist"
+  },
+  {
+   "fieldname": "checklist",
+   "fieldtype": "Link",
+   "label": "Checklist",
+   "options": "Checklist"
+  },
+  {
+   "fieldname": "checklist_data",
+   "fieldtype": "Table",
+   "label": "Checklist Data",
+   "options": "Checklist Data"
   }
  ],
- "modified": "2024-03-27 09:14:49.898065",
+ "modified": "2024-03-27 10:45:47.396815",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Service Event",

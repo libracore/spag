@@ -7,7 +7,7 @@ def get_data():
             "label": _("Selling"),
             "icon": "fa fa-tools",
             "items": [
-				{
+                {
                    "type": "doctype",
                    "name": "Item",
                    "label": _("Item"),
@@ -91,7 +91,13 @@ def get_data():
                    "name": "Responsible",
                    "label": _("Responsible"),
                    "description": _("Responsible")
-                }
+                },
+                {
+                   "type": "doctype",
+                   "name": "Checklist",
+                   "label": _("Checklist"),
+                   "description": _("Checklist")
+                },
             ]
         }
     ]

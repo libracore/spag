@@ -1,0 +1,63 @@
+{
+ "creation": "2024-03-27 10:35:04.669078",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "topic",
+  "description",
+  "input_type",
+  "col_main",
+  "input_text",
+  "input_select"
+ ],
+ "fields": [
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "input_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Text\nSelect",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.input_type==\"Text\"",
+   "fieldname": "input_text",
+   "fieldtype": "Data",
+   "label": "Text"
+  },
+  {
+   "depends_on": "eval:doc.input_type==\"Select\"",
+   "fieldname": "input_select",
+   "fieldtype": "Select",
+   "label": "Select"
+  },
+  {
+   "fieldname": "topic",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Topic",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_main",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "modified": "2024-03-27 11:03:55.168340",
+ "modified_by": "Administrator",
+ "module": "psag",
+ "name": "Checklist Data",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
