@@ -14,7 +14,8 @@
   "site_address",
   "address_display",
   "column_break_7",
-  "gps_coordinates"
+  "gps_coordinates",
+  "distance"
  ],
  "fields": [
   {
@@ -81,9 +82,15 @@
    "fieldtype": "Link",
    "label": "Responsible",
    "options": "Responsible"
+  },
+  {
+   "fetch_from": "site_address.distance",
+   "fieldname": "distance",
+   "fieldtype": "Float",
+   "label": "Distance"
   }
  ],
- "modified": "2024-03-26 16:46:08.673384",
+ "modified": "2024-03-27 14:39:32.667623",
  "modified_by": "Administrator",
  "module": "psag",
  "name": "Application Site",
