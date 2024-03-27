@@ -22,6 +22,11 @@ frappe.ui.form.on('Address', {
     },
     manual_gps: function(frm) {
         lock_unlock_gps(frm);
+    },
+    pincode: function(frm) {
+        if (frm.doc.pincode) {
+            get_city_from_pincode(frm.doc.pincode, 'city');
+        }
     }
 });
 
