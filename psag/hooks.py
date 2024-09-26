@@ -26,7 +26,10 @@ app_license = "AGPL"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+	"Customer" : "public/js/customer.js",
+	"Address" : "public/js/address.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -79,11 +82,11 @@ app_license = "AGPL"
 # ---------------
 # Hook on document methods and events
 
-#doc_events = {
-#	"Facility": {
-#		"validate": "psag.psag.utils.fetch_inspection"
-#	}
-#}
+# ~ doc_events = {
+	# ~ "Application Site": {
+		# ~ "gps_coordinates": "psag.psag.utils.fetch_gps_coordinates"
+	# ~ }
+# ~ }
 
 # Scheduled Tasks
 # ---------------

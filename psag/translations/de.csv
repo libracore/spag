@@ -1,18 +1,46 @@
-DocType: Facility,Facility,Anlage
-DocType: Facility,Area (m2),Fläche (m2)
-DocType: Facility,Volume (m3),Volumen (m3)
-DocType: Facility,Address and Contact,Adresse und Kontakt
-DocType: Inspection,Inspection,Besuch
-DocType: Inspection,Facility,Anlage
-DocType: Inspection,Area (m2),Fläche (m2)
-DocType: Inspection,Volume (m3),Volumen (m3)
-DocType: Inspection,Existing device,Bestehendes Gerät
-DocType: Inspection,Existing device type,Bestehendes Gerät Typ
-DocType: Customer,Industry,Branche
-DocType: Facility,Employee responsible,Zuständiger Mitarbeiter
-DocType: Facility,Employee responsible,Zuständiger Mitarbeiter
-DocType: Quotation,Document Title,Dokumenttitel
-DocType: Sales Order,Document Title,Dokumenttitel
-DocType: Delivery Note,Document Title,Dokumenttitel
-DocType: Sales Invoice,Document Title,Dokumenttitel
-DocType: Facility,Address,Adresse
+DocType: Application Site,Application Site,Einsatzort
+DocType: Application Site,Application Site Name,Einsatzort Name
+DocType: Application Site,Customer,Kunde
+DocType: Application Site,Customer Name,Kundenname
+DocType: Application Site,Customer Address,Kundenadresse
+DocType: Application Site,Address,Adresse
+DocType: Application Site,GPS Coordinates,GPS Koordinaten
+DocType: Application Site,GPS Latitude,GPS Breitengrad
+DocType: Application Site,GPS Longitude,GPS Längengrad
+DocType: Maintenance Event,Maintenance Event,Wartungsereignis
+DocType: Maintenance Event,Application Site,Einsatzort
+DocType: Maintenance Event,Application Site Name,Einsatzort Name
+DocType: Maintenance Event,Customer Name,Kundenname
+DocType: Maintenance Event,Billing Type Event,Abrechnungsart
+DocType: Maintenance Event,	Disabled,Deaktiviert
+DocType: Maintenance Event,Start Date,Startdatum
+DocType: Maintenance Event,Interval,Intervall
+DocType: Maintenance Event,Interval Date,Intervalldatum
+DocType: Maintenance Event,Next Date,Nächstes Datum
+Report: Open Maintenance Events,Open Maintenance Events,Offene Wartungsereignisse
+Report: Open Maintenance Events,Application Site,Einsatzort
+Report: Open Maintenance Events,Application Site Name,Einsatzort Name
+Report: Open Maintenance Events,Customer Name,Kundenname
+Report: Open Maintenance Events,Next Date,Nächstes Datum
+DocType: Service Event,Service Event,Serviceereignis
+DocType: Service Event,Event Type,Ereignistyp
+DocType: Service Event,Planned Start,Geplanter Start
+DocType: Service Event,Planned End,Geplantes Ende
+DocType: Service Event,Target time (min.),Vorgabezeit (min.)
+DocType: Service Event,Application Site,Einsatzort
+DocType: Service Event,Application Site Name,Einsatzort Name
+DocType: Service Event,Customer Name,Kundenname
+DocType: Service Event,Responsible,Ansprechspartner
+DocType: Service Event,Urgent,Dringend
+DocType: Service Event,GPS Coordinates,GPS Koordinaten
+DocType: Service Event,GPS Latitude,GPS Breitengrad
+DocType: Service Event,GPS Longitude,GPS Längengrad
+DocType: Service Event,Service Report,Servicebericht
+DocType: Service Event,Technician,Techniker
+DocType: Service Event,Working Time (h),Arbeitszeit (h)
+DocType: Service Event,Outbound (h),Hinfahrt (h)
+DocType: Service Event,Inbound (h),Rückfahrt (h)
+DocType: Service Event,Item Code,Artikelnummer
+DocType: Service Event,Item Name,Artikelname
+DocType: Service Event,Quantity,Menge
+DocType: Service Event,Notes,Notizen

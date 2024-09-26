@@ -7,7 +7,7 @@ def get_data():
             "label": _("Selling"),
             "icon": "fa fa-tools",
             "items": [
-				{
+                {
                    "type": "doctype",
                    "name": "Item",
                    "label": _("Item"),
@@ -46,27 +46,58 @@ def get_data():
             ]
         },
         {
-            "label": _("Paul Schenk AG"),
+            "label": _("Field Service"),
             "icon": "fa fa-tools",
             "items": [
                 {
                    "type": "doctype",
-                   "name": "Facility",
-                   "label": _("Facility"),
-                   "description": _("Facility")
-                },
-                {
-                   "type": "page",
-                   "name": "facility-overview",
-                   "label": _("Facility Overview"),
-                   "description": _("Facility Overview")
+                   "name": "Application Site",
+                   "label": _("Application Site"),
+                   "description": _("Application Site")
                 },
                 {
                    "type": "doctype",
-                   "name": "Inspection",
-                   "label": _("Inspection"),
-                   "description": _("Inspection")
+                   "name": "Maintenance Event",
+                   "label": _("Maintenance Event"),
+                   "description": _("Maintenance Event")
+                },
+                {
+                   "type": "report",
+                   "name": "Open Maintenance Events",
+                   "doctype": "Maintenance Event",
+                   "is_query_report": True
+                },
+                {
+                   "type": "doctype",
+                   "name": "Service Event",
+                   "label": _("Service Event"),
+                   "description": _("Service Event")
+                },
+                {
+                   "type": "page",
+                   "name": "service-map",
+                   "label": _("Service Map"),
+                   "description": _("Service Map")
                 }
+                
+            ]
+        },
+        {
+            "label": _("Settings"),
+            "icon": "fa fa-tools",
+            "items": [
+                {
+                   "type": "doctype",
+                   "name": "Responsible",
+                   "label": _("Responsible"),
+                   "description": _("Responsible")
+                },
+                {
+                   "type": "doctype",
+                   "name": "Checklist",
+                   "label": _("Checklist"),
+                   "description": _("Checklist")
+                },
             ]
         }
     ]

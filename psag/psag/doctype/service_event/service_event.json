@@ -1,0 +1,284 @@
+{
+ "autoname": "T-.YY.####.",
+ "creation": "2024-03-21 10:56:35.206375",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event_type",
+  "planned_start",
+  "planned_end",
+  "target_time",
+  "status",
+  "urgent",
+  "column_break_2",
+  "application_site",
+  "application_site_name",
+  "maintenance_event",
+  "customer",
+  "customer_name",
+  "responsible",
+  "color",
+  "address_and_contact_section",
+  "site_address",
+  "address_display",
+  "gps_coordinates_section",
+  "gps_latitude",
+  "gps_longitude",
+  "column_break_10",
+  "service_report",
+  "technician",
+  "column_break_17",
+  "working_time",
+  "outbound",
+  "inbound",
+  "total_km",
+  "section_break_21",
+  "material",
+  "section_break_24",
+  "notes",
+  "sec_checklist",
+  "checklist",
+  "checklist_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Select",
+   "label": "Event Type",
+   "options": "Service\nTermin",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval: doc.event_type == \"Service\"",
+   "fetch_from": "maintenance_event.application_site",
+   "fetch_if_empty": 1,
+   "fieldname": "application_site",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Application Site",
+   "options": "Application Site"
+  },
+  {
+   "fieldname": "target_time",
+   "fieldtype": "Int",
+   "label": "Target time (min.)"
+  },
+  {
+   "default": "0",
+   "fieldname": "urgent",
+   "fieldtype": "Check",
+   "label": "Urgent"
+  },
+  {
+   "depends_on": "eval: doc.event_type == \"Service\"",
+   "fieldname": "gps_coordinates_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "GPS Coordinates"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "planned_start",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Planned Start"
+  },
+  {
+   "fieldname": "planned_end",
+   "fieldtype": "Datetime",
+   "label": "Planned End"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "For planning\nPlanned\nIn progress\nCompleted"
+  },
+  {
+   "depends_on": "eval: doc.event_type == \"Service\"",
+   "fieldname": "service_report",
+   "fieldtype": "Section Break",
+   "label": "Service Report"
+  },
+  {
+   "fieldname": "technician",
+   "fieldtype": "Link",
+   "label": "Technician",
+   "options": "Responsible"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "working_time",
+   "fieldtype": "Float",
+   "label": "Working Time (h)"
+  },
+  {
+   "fieldname": "outbound",
+   "fieldtype": "Float",
+   "label": "Outbound (h)"
+  },
+  {
+   "fieldname": "inbound",
+   "fieldtype": "Float",
+   "label": "Inbound (h)"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Table",
+   "label": "Material",
+   "options": "Service Event Material"
+  },
+  {
+   "depends_on": "eval: doc.event_type == \"Service\"",
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_km",
+   "fieldtype": "Int",
+   "label": "Total KM"
+  },
+  {
+   "depends_on": "eval: doc.event_type == \"Termin\"",
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fetch_from": "application_site.application_site_name",
+   "fieldname": "application_site_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Application Site Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "maintenance_event",
+   "fieldtype": "Link",
+   "label": "Maintenance Event",
+   "options": "Maintenance Event"
+  },
+  {
+   "fetch_from": "maintenance_event.customer",
+   "fetch_if_empty": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "maintenance_event.responsible",
+   "fetch_if_empty": 1,
+   "fieldname": "responsible",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Responsible",
+   "options": "Responsible"
+  },
+  {
+   "fieldname": "address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fetch_from": "maintenance_event.site_address",
+   "fieldname": "site_address",
+   "fieldtype": "Link",
+   "label": "Site Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "responsible.color",
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "hidden": 1,
+   "label": "Color"
+  },
+  {
+   "fetch_from": "site_address.gps_latitude",
+   "fieldname": "gps_latitude",
+   "fieldtype": "Float",
+   "label": "GPS Latitude"
+  },
+  {
+   "fetch_from": "site_address.gps_longitude",
+   "fieldname": "gps_longitude",
+   "fieldtype": "Float",
+   "label": "GPS Longitude"
+  },
+  {
+   "fieldname": "sec_checklist",
+   "fieldtype": "Section Break",
+   "label": "Checklist"
+  },
+  {
+   "fieldname": "checklist",
+   "fieldtype": "Link",
+   "label": "Checklist",
+   "options": "Checklist"
+  },
+  {
+   "fieldname": "checklist_data",
+   "fieldtype": "Table",
+   "label": "Checklist Data",
+   "options": "Checklist Data"
+  }
+ ],
+ "modified": "2024-03-27 10:45:47.396815",
+ "modified_by": "Administrator",
+ "module": "psag",
+ "name": "Service Event",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "application_site_name",
+ "track_changes": 1
+}

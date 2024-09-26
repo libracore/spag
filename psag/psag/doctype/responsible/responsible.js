@@ -1,7 +1,7 @@
 // Copyright (c) 2024, libracore AG and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Facility', {
+frappe.ui.form.on('Responsible', {
 	// refresh: function(frm) {
 
 	// }
